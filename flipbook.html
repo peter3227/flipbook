@@ -9,7 +9,6 @@
         
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -17,10 +16,17 @@
             color: white;
             font-family: monospace;
         }
+        .container {
+            display: flex;
+            align-items: center;
+        }
         .location {
             font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
-            margin-bottom: 20px;
+            text-align: left;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
         }
         .clock {
             display: flex;
@@ -55,16 +61,21 @@
     </style>
 </head>
 <body>
-    <div class="location">SEOUL</div>
-    <div class="clock">
-        <div class="digit-container" id="hour1"><div class="flip">0</div></div>
-        <div class="digit-container" id="hour2"><div class="flip">0</div></div>
-        <div>:</div>
-        <div class="digit-container" id="min1"><div class="flip">0</div></div>
-        <div class="digit-container" id="min2"><div class="flip">0</div></div>
-        <div>:</div>
-        <div class="digit-container" id="sec1"><div class="flip">0</div></div>
-        <div class="digit-container" id="sec2"><div class="flip">0</div></div>
+    <div class="container">
+        <div class="location">
+            <div>SEO</div>
+            <div>UL</div>
+        </div>
+        <div class="clock">
+            <div class="digit-container" id="hour1"><div class="flip">0</div></div>
+            <div class="digit-container" id="hour2"><div class="flip">0</div></div>
+            <div>:</div>
+            <div class="digit-container" id="min1"><div class="flip">0</div></div>
+            <div class="digit-container" id="min2"><div class="flip">0</div></div>
+            <div>:</div>
+            <div class="digit-container" id="sec1"><div class="flip">0</div></div>
+            <div class="digit-container" id="sec2"><div class="flip">0</div></div>
+        </div>
     </div>
     
     <script>
