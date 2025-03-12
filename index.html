@@ -15,6 +15,12 @@
             background-color: #111;
             color: white;
             font-family: monospace;
+            flex-direction: column;
+        }
+        .date {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
         .container {
             display: flex;
@@ -61,6 +67,7 @@
     </style>
 </head>
 <body>
+    <div class="date" id="date"></div>
     <div class="container">
         <div class="location">
             <div>SEO</div>
@@ -98,8 +105,19 @@
             });
         }
         
+        function updateDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const weekday = weekdays[now.getDay()];
+            document.getElementById('date').textContent = `${year}-${month}-${day} ${weekday}`;
+        }
+        
         setInterval(updateClock, 1000);
         updateClock();
+        updateDate();
     </script>
 </body>
 </html>
